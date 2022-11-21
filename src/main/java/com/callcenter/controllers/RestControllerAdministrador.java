@@ -12,6 +12,6 @@ public class RestControllerAdministrador {
     @GetMapping
     public String saludar(){
 
-        return "Hola desde Spring Framework";
+        return "Hola desde Spring";
     }
 }
