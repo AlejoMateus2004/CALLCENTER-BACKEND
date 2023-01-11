@@ -31,4 +31,9 @@ public class IncidentTypeServiceImpl implements IncidentTypeService {
     public void delete(IncidentType IncidentType) {
         incidentTypeRepository.delete(IncidentType);
     }
+
+    @Override
+    public IncidentType getIncidentTypeById(int id) {
+        return incidentTypeRepository.findById(id).orElse(null);
+    }
 }

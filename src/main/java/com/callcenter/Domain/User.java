@@ -36,12 +36,5 @@ public class User {
     private String password;
 
 
-    @OneToMany(mappedBy = "iduser", fetch = FetchType.LAZY)
-    private List<Record> records;
-
-    @OneToMany(mappedBy = "iduser", fetch = FetchType.LAZY)
-    private List<Incident> incidents;
-
-
 
 }

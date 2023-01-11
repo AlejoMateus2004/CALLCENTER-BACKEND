@@ -2,6 +2,7 @@ package com.callcenter.Service;
 
 import com.callcenter.DAO.IncidentRepository;
 import com.callcenter.Domain.Incident;
+import com.callcenter.Domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,6 +21,11 @@ public class IncidentServiceImpl implements IncidentService{
     @Transactional(readOnly = true)
     public List<Incident> getIncidents() {
         return incidentRepository.findAll();
+    }
+
+    @Override
+    public List<Incident> getIncidentsByUser(User user) {
+        return incidentRepository.getIncidentsByiduser(user);
     }
 
     @Override

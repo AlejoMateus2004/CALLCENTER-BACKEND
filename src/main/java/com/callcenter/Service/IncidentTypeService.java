@@ -10,5 +10,7 @@ public interface IncidentTypeService {
     IncidentType save(IncidentType IncidentType);
     void delete(IncidentType IncidentType);
 
+    IncidentType getIncidentTypeById(int id);
+
 
 }

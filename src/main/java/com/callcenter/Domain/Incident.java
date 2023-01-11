@@ -14,7 +14,7 @@ public class Incident {
     @Column(name = "idincidents", nullable = false)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne
     @JoinColumn(name = "iduser", nullable = false)
     private User iduser;
 
@@ -25,7 +25,7 @@ public class Incident {
     @Column(name = "reason", nullable = false)
     private String reason;
 
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @OneToOne
     @JoinColumn(name = "idincident_type", nullable = false)
     private IncidentType idincidentType;
 
