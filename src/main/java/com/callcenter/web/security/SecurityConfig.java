@@ -35,11 +35,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().authorizeRequests().antMatchers("/**/authenticate").permitAll()
-                .antMatchers("/User/all", "/User/save", "/User/delete/**","/User/**")
+                .antMatchers("/User/all", "/User/save", "/User/delete/**","/User/**","/Incident/newIncident")
                 .hasRole("ADMIN")
 
                 .antMatchers("/Records/User/**", "/Records/check_in_time/**",  "/Records/check_out_time/**",
-                        "/Break/Record/**", "/Break/check_in_time/**", "/Break/check_out_time/**", "/Incident/all/**","/Incident/newIncident")
+                        "/Break/Record/**", "/Break/check_in_time/**", "/Break/check_out_time/**", "/Incident/all/**")
                 .hasAnyRole("ADMIN", "COLABORATOR")
                 .anyRequest().authenticated()
                 .and().sessionManagement()
