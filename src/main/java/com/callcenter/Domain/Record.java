@@ -21,11 +21,16 @@ public class Record {
     @Column(name = "clockin", nullable = false, length = 45)
     private String clockin;
 
-    @Column(name = "clockout", nullable = false, length = 45)
+    @Column(name = "clockout", nullable = true, length = 45)
     private String clockout;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "iduser", nullable = false)
+
+    @ManyToOne
+    @JoinColumn(name = "iduser")
     private User iduser;
 
+    @Override
+    public String toString() {
+        return "Record(id=" + this.getId() + ", date=" + this.getDate() + ", clockin=" + this.getClockin() + ", clockout=" + this.getClockout();
+    }
 }

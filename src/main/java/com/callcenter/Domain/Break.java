@@ -7,7 +7,6 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "breaks")
-
 public class Break {
 
     @Id
@@ -15,14 +14,14 @@ public class Break {
     @Column(name = "idbreaks", nullable = false)
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne
     @JoinColumn(name = "idrecord", nullable = false)
     private Record idrecord;
 
     @Column(name = "clockin", nullable = false, length = 45)
     private String clockin;
 
-    @Column(name = "clockout", nullable = false, length = 45)
+    @Column(name = "clockout", nullable = true, length = 45)
     private String clockout;
 
 
